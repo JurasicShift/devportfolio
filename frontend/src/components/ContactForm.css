@@ -20,7 +20,7 @@
 
 .form__label,
 .form__input {
-	margin: 20px 0 0 0;
+	margin: 10px 0 0 0;
 }
 
 .form__input {
@@ -34,6 +34,12 @@
 	color: white;
 	padding: 5px;
 }
+
+.form__error {
+	margin-top: 5px;
+	height: 20px;
+}
+
 
 textarea:focus,
 input:focus {
