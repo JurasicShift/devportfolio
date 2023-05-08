@@ -1,0 +1,68 @@
+@font-face {
+	font-family: 'sciFi';
+	src: url('../fonts/font3.otf');
+}
+
+.title__div {
+	position: absolute;
+	top: 0px;
+	left: 20px;
+	height: 50px;
+	width: 100vw;
+    z-index: -2;
+}
+
+.title__text {
+	font-size: 16px;
+	font-family: 'sciFi';
+	color: white;
+	letter-spacing: 1px;
+	line-height: 50px;
+	opacity: 0;
+	animation-name: titleSwivel;
+	animation-duration: 300ms;
+	animation-delay: 1s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+}
+
+@keyframes titleSwivel {
+	0% {
+		transform: rotateX(90deg);
+		opacity: 0;
+	}
+	100% {
+		transform: rotateX(0);
+		opacity: 0.8;
+	}
+}
+
+@media only screen and (min-width: 650px) {
+	/* .title__div {
+        width: 140px;
+        margin-left: 0px;
+    } */
+
+	.title__div {
+		margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;
+		text-align: center;
+	}
+
+	.title__text {
+		font-size: 18px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.title__div {
+		margin-top: 10px;
+	}
+
+	.title__text {
+		font-size: 20px;
+		letter-spacing: 1.5px;
+	}
+}

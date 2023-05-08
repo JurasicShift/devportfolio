@@ -1,0 +1,110 @@
+.carousel__wrapper {
+   position: absolute;
+   top: -100%;
+   transition: all 1.5s ease-out;
+}
+
+.carousel__wrapper-items,
+.carousel__wrapper-duplicate {
+    opacity: 0;
+    transition: opactiy 250ms ease-in;
+}
+
+.carousel__items,
+.carousel__duplicate {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel__items {
+    top: 5px;
+}
+
+.carousel__duplicate {
+    top: 5px;
+}
+
+.carousel__show {
+    opacity: 1;
+}
+
+.carousel__hide {
+    opacity: 0;
+}
+
+.carousel__opacity {
+    opacity: 1;
+    transition: all 1s linear;
+}
+
+.carousel__opacity-img {
+    opacity: 1;
+}
+
+.carousel__controls {
+    position: absolute;
+    top: 55%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.carousel__controls-btn {
+    background-color: transparent;
+	border: 1px solid white;
+    border-radius: 30px;
+	color: white;
+	font-size: 18px;
+}
+
+.carousel__controls-btn:hover {
+    cursor: pointer;
+}
+
+.btn-left {
+    margin-right: 10px;
+    padding: 6px 20px 1px 18px;
+}
+
+.btn-right {
+    margin-left: 10px;
+    padding: 6px 18px 1px 20px;
+}
+
+.carousel__controls-div {
+    width: 155px;
+}
+
+@font-face {
+	font-family: 'sciFi';
+	src: url('../fonts/font3.otf');
+}
+
+.carousel__controls-text {
+   padding: 5px 0px 5px 0px;
+   letter-spacing: 1px;
+   text-align: center;
+   font-size: 16px;
+   font-family: 'sciFi';
+}
+
+@media only screen and (min-width: 992px) {
+
+     .carousel__controls {
+        top: 60%;
+    }
+
+    .carousel__controls-div {
+        width: 195px;
+    }
+    
+    .carousel__controls-text {
+       letter-spacing: 2px;
+       font-size: 20px;
+    }
+}

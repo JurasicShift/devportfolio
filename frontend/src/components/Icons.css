@@ -1,0 +1,36 @@
+/* ====================================
+ICON SECTION 
+==================================== */
+
+.icons__section {
+	position: absolute;
+	bottom: 10px;
+	height: 50px;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.icons__Linked img,
+.icons__Git img {
+	height: 30px;
+	width: 30px;
+	opacity: 0.6;
+	transition: opacity 0.5s;
+}
+
+.icons__Linked img {
+	padding: 5px;
+}
+
+.icons__Git img {
+	position: relative;
+	top: -2px;
+}
+
+.icons__Linked img:hover,
+.icons__Git img:hover {
+	opacity: 1;
+}

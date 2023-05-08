@@ -1,0 +1,40 @@
+.background {
+    background-image: url('../imgs/bgImg.jpg');
+	height: 100vh;
+	width: 100%;
+	background-size: cover;
+	background-position: 50% 50%;
+	transform: translateZ(0);
+	z-index: -2;
+	position: fixed;
+}
+
+.background__animate {
+	animation: parallaxStyleEffect 60s infinite !important;
+
+}
+
+@keyframes parallaxStyleEffect {
+	0% {
+		transform: scale(1, 1);
+	  }
+	  50% {
+		transform: scale(1.2, 1.2);
+	  }
+	  100% {
+		transform: scale(1, 1);
+	  }
+}
+
+
+
+@keyframes bgSlide {
+	0% {
+		transform: scale(10);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+
