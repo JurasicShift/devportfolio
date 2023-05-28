@@ -3,9 +3,9 @@ import { NavLink, Outlet } from 'react-router-dom';
 import './Navigation.css';
 import Icons from './Icons';
 import useViewport from '../hooks/useViewport';
-
+//ad9eab //af913f color: '#e27429',
 const activeStyle = {
-	color: '#ad9eab',
+	opacity: "1"
 };
 const styleNavOpen = {
 	left: '0px',

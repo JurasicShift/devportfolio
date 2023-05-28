@@ -15,10 +15,12 @@ ICON SECTION
 
 .icons__Linked img,
 .icons__Git img {
+	position: relative;
 	height: 30px;
 	width: 30px;
 	opacity: 0.6;
 	transition: opacity 0.5s;
+	z-index: 99;
 }
 
 .icons__Linked img {
@@ -26,7 +28,6 @@ ICON SECTION
 }
 
 .icons__Git img {
-	position: relative;
 	top: -2px;
 }
 

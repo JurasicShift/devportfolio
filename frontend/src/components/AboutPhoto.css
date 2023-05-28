@@ -1,0 +1,90 @@
+@property --angle {
+	syntax: '<angle>';
+	initial-value: 90deg;
+	inherits: true;
+}
+
+@property --gradX {
+	syntax: '<percentage>';
+	initial-value: 50%;
+	inherits: true;
+}
+
+@property --gradY {
+	syntax: '<percentage>';
+	initial-value: 0%;
+	inherits: true;
+}
+
+:root {
+	--d: 2500ms;
+	--angle: 90deg;
+	--gradX: 100%;
+	--gradY: 50%;
+	--c1: rgba(168, 239, 255, 1);
+	--c2: rgba(168, 239, 255, 0.1);
+}
+
+.aboutme__img {
+	height: 100px;
+	width: 100px;
+	float: right;
+	border: 0.35rem solid rgba(168, 239, 255, 0.1);
+	
+}
+
+.aboutme__img-animation {
+	border-image: conic-gradient(
+			from var(--angle),
+			var(--c2),
+			var(--c1) 0.1turn,
+			var(--c1) 0.15turn,
+			var(--c2) 0.25turn
+		)
+		30;
+	animation: borderRotate var(--d) linear infinite forwards;
+}
+
+
+.aboutme__img img {
+	position: relative;
+	height: 100px;
+	width: 100px;
+	opacity: 0.8;
+}
+
+@keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+	}
+}
+
+@media only screen and (min-width: 650px) { 
+
+	.aboutme__img {
+		height: 125px;
+		width: 125px;
+		
+	}
+
+	.aboutme__img img{
+		height: 125px;
+		width: 125px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+    .aboutme__img {
+		min-height: 452px;
+		min-width: 353px;
+		border: none;
+		float: none;
+	}
+
+	.aboutme__img img{
+		min-height: 452px;
+		min-width: 353px;
+	}
+
+
+}

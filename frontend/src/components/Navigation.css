@@ -27,9 +27,10 @@ NAVBAR
 	height: 0%;
 	transition: 0.75s;
 	overflow: hidden;
-	background-color: rgba(34, 85, 153, 0.9);
+	background-color: rgba(39, 38, 36, 0.8);
 }
 
+/* 34, 85, 153, */
 .navSmallHeight {
 	height: 100%;
 }
@@ -61,19 +62,17 @@ NAVBAR
 	
 }
 
+
 .navigation ul li a,
-.navigation ul li a,
-.navSmall ul li a,
 .navSmall ul li a {
-	opacity: 1;
+	opacity: 0.7;
 	transition: opacity 0.2s;
 }
 
+
 .navigation ul li a:hover,
-.navigation ul li a:hover,
-.navSmall ul li a:hover,
 .navSmall ul li a:hover {
-	opacity: 0.7;
+	opacity: 1;
 }
 
 .navigation ul li .link {

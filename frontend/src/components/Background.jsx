@@ -37,7 +37,7 @@ function Background(props) {
 		>
 		</div>
 		<div className="background__icons">
-			{pathname === '/projects' && width < breakpoint ? null : <Icons />}
+			{(pathname === '/projects' || pathname === '/about') && width < breakpoint ? null : <Icons />}
 		</div>
 		</>
 	);

@@ -1,17 +1,21 @@
 const express = require("express");
-const dotenv = require("dotenv").config();
-const port = process.env.PORT || 5000;
+// const dotenv = require("dotenv").config();
+
 const cors = require("cors");
 const app = express();
+const routes = require('./routes/index');
+
+const environment = process.env.NODE_ENV || 'development';
+const port = process.env.PORT || 5000;
+
+if (environment !== "production") {
+  require("dotenv").config();
+}
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.post("/contact", (req, res) => {
-    const data = req.body;
-    console.log("data:", data);
-    res.json({message: data.message});
-})
 
+app.use('/', routes);
 app.listen(port, () => console.log(`listening on port: ${port}`));

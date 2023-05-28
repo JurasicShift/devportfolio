@@ -38,6 +38,10 @@
 .form__error {
 	margin-top: 5px;
 	height: 20px;
+	color: red;
+	font-weight: bold;
+	opacity: 0;
+	transition: opacity 200ms ease;
 }
 
 

@@ -3,16 +3,19 @@ PAGE MONIKER SECTION
 ================================= */
 
 .page__moniker {
-	margin: 0 auto;
+	/* margin: 0 auto; */
 	height: 90px;
 	box-sizing: border-box;
 	z-index: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .page__title {
 	width: 150px;
 	height: 50px;
-	margin-top: 40px;
+	/* margin-top: 40px; */
 	font-family: 'Righteous', cursive;
 	border: 2px solid white;
 	font-size: 15px;
@@ -21,13 +24,13 @@ PAGE MONIKER SECTION
 	align-items: center;
 	justify-content: center;
 	position: relative;
-	z-index: -1;
+	/* z-index: -1; */
 	opacity: 0;
 	transition: opacity 3s ease-in;
 }
 
-.showPageMoniker {
-	opacity: 1;
+.page__title:hover {
+	cursor: pointer;
 }
 
 .page__title::before,

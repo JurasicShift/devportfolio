@@ -11,7 +11,6 @@ function Projects() {
 				<PageTitle text="Projects" />
 			</div>
 			<div className="project__items">
-			
 				<ProjectItem projects={ProjectData} />
 			</div>
 		</div>
