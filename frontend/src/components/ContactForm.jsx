@@ -1,34 +1,61 @@
 import React, { useState, useRef } from 'react';
 import './ContactForm.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Validation, isObjectEmpty } from '../hooks/validation';
+const baseUrl = 'http://localhost:5000';
 
 const ContactForm = () => {
 	const [errors, setErrors] = useState({});
 	const formRef = useRef(null);
-
+	
 	const onClear = () => {
 		formRef.current.reset();
 	}
 
 	const handleSubmit = e => {
 		e.preventDefault();
-
+		
 		const data = new FormData(e.currentTarget);
+	
 		const values = Object.fromEntries(data.entries());
-
 		const errorMessage = Validation(values);
+		const toastOptions = {
+			position: "top-right",
+			autoClose: 2500,
+			hideProgressBar: true,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+			theme: "colored",
+			}
 
 		if (isObjectEmpty(errorMessage)) {
 			setErrors(errorMessage);
-			fetch('http://localhost:5000/contact', {
+			fetch(`${baseUrl}/contact`, {
 				method: 'POST',
 				headers: {
 					'Content-type': 'application/json',
 				},
 				body: JSON.stringify(values),
 			})
-				.then(result => result.json())
-				.then(info => console.log(info))
+				.then(result => {
+					if(!result.ok) {
+						return toast.warn("Sorry Something Went Wrong!", toastOptions);
+					}
+					return result.json()
+				})
+				.then((info) => {
+					if(info.status === 200) {
+						toast.info("Message Sent!", toastOptions);
+					}
+
+					if(info.status === 400) {
+						toast.warn("Sorry Message Failed!", toastOptions);
+					}
+				} 
+				)
 				.then(onClear());
 		} else {
 			setErrors(errorMessage);
@@ -57,9 +84,9 @@ const ContactForm = () => {
 					/>
 					<p
 						className="form__error"
-						style={errors.name ? errorShow : errorHide}
+						style={errors.subject ? errorShow : errorHide}
 					>
-						{errors.name}
+						{errors.subject}
 					</p>
 					<label htmlFor="contactEmail" className="form__label">
 						E-mail
@@ -86,9 +113,9 @@ const ContactForm = () => {
 					></textarea>
 					<p
 						className="form__error"
-						style={errors.message ? errorShow : errorHide}
+						style={errors.text ? errorShow : errorHide}
 					>
-						{errors.message}
+						{errors.text}
 					</p>
 				</form>
 				<div className="form__btn">
@@ -97,6 +124,7 @@ const ContactForm = () => {
 					</button>
 				</div>
 			</div>
+			<ToastContainer />
 		</div>
 	);
 };

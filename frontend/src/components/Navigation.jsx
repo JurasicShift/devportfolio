@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import './Navigation.css';
-import Icons from './Icons';
 import useViewport from '../hooks/useViewport';
-//ad9eab //af913f color: '#e27429',
+import Icons from './Icons';
+
 const activeStyle = {
 	opacity: "1"
 };
@@ -42,7 +42,8 @@ function Navigation() {
 	const [togElement, setTogElement] = useState(burgerClosed);
 	const [togOpacity, setTogOpacity] = useState('0');
 	const { width } = useViewport();
-	const breakpoint1 = 650;
+	const breakpoint1 = 992;
+	const prefix = 'michaelwhytewebdev/';
 
 	const handleToggleClick = () => {
 		const navState = openNav;
@@ -90,7 +91,7 @@ function Navigation() {
 					<li>
 						<NavLink
 							className="link"
-							to={'/'}
+							to={prefix}
 							style={({ isActive }) => (isActive ? activeStyle : undefined)}
 							onClick={width <= breakpoint1 ? handleToggleClick : null}
 						>
@@ -103,7 +104,7 @@ function Navigation() {
 					<li>
 						<NavLink
 							className="link"
-							to={'/about'}
+							to={`${prefix}about`}
 							style={({ isActive }) => (isActive ? activeStyle : undefined)}
 							onClick={width <= breakpoint1 ? handleToggleClick : null}
 						>
@@ -116,7 +117,7 @@ function Navigation() {
 					<li>
 						<NavLink
 							className="link"
-							to={'/projects'}
+							to={`${prefix}projects`}
 							style={({ isActive }) => (isActive ? activeStyle : undefined)}
 							onClick={width <= breakpoint1 ? handleToggleClick : null}
 						>
@@ -129,7 +130,7 @@ function Navigation() {
 					<li>
 						<NavLink
 							className="link"
-							to={'/tech'}
+							to={`${prefix}tech`}
 							style={({ isActive }) => (isActive ? activeStyle : undefined)}
 							onClick={width <= breakpoint1 ? handleToggleClick : null}
 						>
@@ -142,7 +143,7 @@ function Navigation() {
 					<li>
 						<NavLink
 							className="link"
-							to={'/contact'}
+							to={`${prefix}contact`}
 							style={({ isActive }) => (isActive ? activeStyle : undefined)}
 							onClick={width <= breakpoint1 ? handleToggleClick : null}
 						>
@@ -153,7 +154,9 @@ function Navigation() {
 						</NavLink>
 					</li>
 				</ul>
-				{width <= breakpoint1 ? <Icons /> : null}
+				<div className="navSmall__icons">
+					<Icons relative={true}/>
+				</div>
 			</div>
 			<div className="toggle" id="toggle" onClick={handleToggleClick}>
 				<div
@@ -165,8 +168,6 @@ function Navigation() {
 				</div>
 			</div> 
 			<Outlet />
-		
-			{/* <Icons /> */}
 		</div>
 	);
 }

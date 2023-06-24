@@ -15,7 +15,7 @@ PAGE MONIKER SECTION
 .page__title {
 	width: 150px;
 	height: 50px;
-	/* margin-top: 40px; */
+
 	font-family: 'Righteous', cursive;
 	border: 2px solid white;
 	font-size: 15px;

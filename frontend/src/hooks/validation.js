@@ -3,8 +3,8 @@ const Validation = (obj) => {
 
     const email_reg = /^[^\s@]+@[^\s@]+\.[^\s@]{2,6}$/;
 
-    if(obj.name === "") {
-        errors.name = "Name is Required";
+    if(obj.subject === "") {
+        errors.subject = "Name is Required";
     }
 
     if(obj.email === "") {
@@ -15,8 +15,8 @@ const Validation = (obj) => {
         errors.email = "Email is not Valid";
     }
 
-    if(obj.message === "") {
-        errors.message = "Message is required";
+    if(obj.text === "") {
+        errors.text = "Message is required";
     }
 
     return errors;

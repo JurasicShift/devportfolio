@@ -27,7 +27,7 @@ NAVBAR
 	height: 0%;
 	transition: 0.75s;
 	overflow: hidden;
-	background-color: rgba(39, 38, 36, 0.8);
+	background-color: rgba(39, 38, 36, 0.9);
 }
 
 /* 34, 85, 153, */
@@ -44,11 +44,13 @@ NAVBAR
 	top: 0;
 	left: 0;
 	width: 100%;
+	z-index: 999;
 }
 
 .navSmall ul {
 	position: relative;
 	top: 150px;
+	z-index: 999;
 }
 
 .navigation ul li {
@@ -111,6 +113,14 @@ NAVBAR
 
 .navSmall ul li .link .title {
 	color: white !important;
+}
+
+.navSmall__icons {
+	height: 100vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
 }
 
 .navigation ul li .link .title {

@@ -117,9 +117,12 @@ function ProjectItem(props) {
 							</div>
 						</div>
 					</div>
+					
 				</div>
 				<div className='project__iconFlex' style={idx === 3 && width < breakpoint ? marginAdd : null}>
-					{idx === 3 && width < breakpoint ? <Icons /> : null}
+					{idx === 3 && width < breakpoint ? <div className="project__icons">
+						<Icons relative={true}/>
+					</div> : null}
 				</div>
 			</div>
 		);

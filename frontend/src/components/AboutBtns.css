@@ -1,0 +1,54 @@
+.chat__btn {
+	border: none;
+	border-radius: 5px;
+	width: 50%;
+	color: #f5f0f0;
+	background-color: #e27429;
+	padding: 10px 15px 10px 15px;
+	letter-spacing: 1px;
+	transition: all 200ms;
+}
+
+.chat__btn-0 {
+	background-color: #2596be;
+}
+
+.chat__btn-1 {
+	background-color: #145369;
+}
+
+.chat__btn-2 {
+	background-color: #2587be;
+}
+
+.chat__btn:hover {
+	cursor: pointer;
+	border-radius: 30px;
+	padding: 10px 30px 10px 30px;
+}
+
+.chat__icons {
+	margin: 10px 20px 0px 20px;
+	padding: 30px 30px 0 30px;
+}
+
+
+
+@media only screen and (min-width: 650px) {
+
+	.chat__btn {
+		padding: 10px 25px 10px 25px;
+	}
+
+	.chat__btn:hover {
+		padding: 10px 35px 10px 35px;
+	}
+}
+
+
+@media only screen and (min-width: 1200px) {
+
+	.chat__btn {
+		width: 40%;
+	}
+}

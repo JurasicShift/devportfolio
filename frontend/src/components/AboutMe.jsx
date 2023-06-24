@@ -1,64 +1,155 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './AboutMe.css';
-import AboutPhoto from './AboutPhoto';
-import useViewport from '../hooks/useViewport';
-import Icons from './Icons';
-import CoderDojo from '../imgs/CoderDojo.svg';
-
+import Draft from './AboutDraft';
+import AboutPhoto from './Photo';
+import ChatPhoto from '../imgs/chat3.png';
+import WordCloud from './TagCloud';
+import {ChatBtns, OriginBtn} from './AboutBtns';
+import {trimmer, parseCloud, parseParagraphs} from '../utilities/parsers';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import aboutString from '../data/htmlString';
+const baseUrl = 'http://localhost:5000';
 
 const AboutMe = () => {
-	const [divHeight, setDivHeight] = useState(0);
-	const [divWidth, setDivWidth] = useState(0);
-	const divRef = useRef(null);
-	const { width } = useViewport();
-	const breakpoint = 1200;
-    const dojoStyle = {
-        height: "25px",
-        position: "relative",
-        top: "5px",
-        marginRight: "2px"
-    }
+	const [loading, setLoading] = useState(false);
+	const [aboutTitle, setAboutTitle] = useState('');
+	const [text, setText] = useState('');
+	const [chat, setChat] = useState(false);
+	const [cloud, setCloud] = useState(false);
+	const [theme, setTheme] = useState(false);
+
+	if(true) {
+		throw new Error("Forced Error Forced Error Forced ErrorForced Error");
+	}
 
 	useEffect(() => {
-		setDivHeight(divRef.current.clientHeight);
-		setDivWidth(divRef.current.clientWidth);
-	})
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: 'smooth',
+		});
+	}, [text]);
+
+
+
+
+	const toastOptions = {
+		position: 'top-right',
+		autoClose: 2500,
+		hideProgressBar: true,
+		closeOnClick: true,
+		pauseOnHover: true,
+		draggable: true,
+		progress: undefined,
+		theme: 'colored',
+	};
+
+	const handleOriginal = () => {
+		setText('');
+		setChat(false);
+		setCloud(false);
+		setTheme(false);
+	};
+
+	const handleRewrite = async e => {
+		const btnValue = e.target.value;
+		setAboutTitle(btnValue);
+		if (btnValue === 'Themes') {
+			setTheme(true);
+		} else {
+			setTheme(false);
+
+		}
+		
+			try {
+			setLoading(true);
+			toast.info('Awaiting Response!!', toastOptions);
+
+			const response = await fetch(`${baseUrl}/rewrite`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ searchTerm: btnValue, text: aboutString }),
+			});
+
+			if (!response.ok) {
+				toast.warn('ChatGPT Not Resonding!!', toastOptions);
+			}
+
+			const data = await response.json();
+
+			setTimeout(() => {
+	
+				if (btnValue === 'Cloud') {
+					setCloud(true);
+					const trimmed = trimmer(data.newText, ' ', true);
+					
+					setText(trimmed);
+				
+				} else {
+					if(cloud) setCloud(false);
+					const trimmed = trimmer(data.newText, '\n', false);
+					setText(trimmed);
+				}
+
+				setChat(true);
+				setLoading(false);
+			}, 500);
+		} catch (error) {
+			toast.error('An error occurred while fetching data');
+			setLoading(false);
+		}
+	};
+
+
+	const chatStyle = {
+		height: '25px',
+		position: 'relative',
+		top: '7px',
+		margin: '0 0 0 2px',
+	};
+
+	const divStyle = {
+		display: 'inline',
+	};
 
 	return (
 		<div className="aboutme">
-			
 			<div className="aboutme__div">
-				{width < breakpoint ? <AboutPhoto height={divHeight} width={divWidth}/> : null}
-				<p className="aboutme__text aboutme__text-margin">
-					My interest in web development came straight out of leftfield; here is
-					the story of how. Part of my role as a library assistant is to teach
-					seniors basic IT skills. With this in mind I was asked if I would like
-					to start a code club for kids. Coming from an arts and humanities
-					background I knew nothing about coding, though I was keen to learn. If
-					kids could do it then so could I! My first step was to get a kids book
-					on HTML and CSS, my interest flourished and just prior to lockdown I
-					began a web development bootcamp on Udemy. Three years later I have
-					completed four substantial projects and my portfolio. I have been
-					running a <span><a href="https://coderdojo.com/en" target="_blank" rel="noreferrer"><img src={CoderDojo} style={dojoStyle} alt="coder dojo" /></a></span> for kids age 7 – 11 since September 2022
-				</p>
-
-				<p className="aboutme__text ">
-					Beyond web development I enjoy learning French and reading French
-					literature, though my interest in reading also includes history,
-					politics and critical theory. I love the outdoors and have complete 5
-					marathons, 6 half marathons, I have an advanced open water diving certificate and I’m currently training to swim the
-					length of Coniston Water.
+				{
+					chat ? <div className="about__title">{aboutTitle}</div> : null
+				}
+				<AboutPhoto />
+				{
+					!chat ? < Draft /> : cloud ? < WordCloud tags={parseCloud(text)} /> : parseParagraphs(text, theme)
 					
-				</p>
-				{width < breakpoint ?<div className="aboutme__icons">
-				 <Icons /> 
-				</div>: null}
-				<div className="aboutme__flexPhoto" ref={divRef}>
-				{width > breakpoint ? <AboutPhoto height={divHeight} width={divWidth}/> : null}
-				</div>
-				
+				}
+				{
+					chat ? < OriginBtn cloud={cloud} handler={handleOriginal}/> : null
+				}
 			</div>
-			
+			<div className="chat">
+				<div className="chat__div">
+					<div className="chat__spinner">
+						{loading && <div className="spinner"></div>}
+					</div>
+					<div className="chat__text">
+						Use{' '}
+						<span>
+							<div style={divStyle}>
+								<img src={ChatPhoto} style={chatStyle} alt="chat g p t" />
+							</div>
+						</span>{' '}
+						ChatGPT to summarize, or organise by theme or word cloud.
+					</div>
+					<div className="chat__form">
+						<ChatBtns handler={handleRewrite} />
+					</div>
+				</div>
+			</div>
+			<ToastContainer />
 		</div>
 	);
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import PageTitle from '../components/PageTitle';
 import './Tech.css';
 import CarouselItems from '../components/CarouselItem';
+import Icons from '../components/Icons';
 
 function Tech() {
 	return (
@@ -12,6 +13,7 @@ function Tech() {
 			<div className="carousel__container">
 				<CarouselItems />
 			</div>
+			<Icons />
 		</div>
 	);
 }

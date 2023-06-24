@@ -38,18 +38,6 @@
 }
 
 @media only screen and (min-width: 650px) {
-	/* .title__div {
-        width: 140px;
-        margin-left: 0px;
-    } */
-
-	.title__div {
-		margin-left: auto;
-		margin-right: auto;
-		left: 0;
-		right: 0;
-		text-align: center;
-	}
 
 	.title__text {
 		font-size: 18px;
@@ -59,6 +47,11 @@
 @media only screen and (min-width: 992px) {
 	.title__div {
 		margin-top: 10px;
+		margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;
+		text-align: center;
 	}
 
 	.title__text {

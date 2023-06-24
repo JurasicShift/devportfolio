@@ -16,7 +16,8 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "nodemailer": "^6.9.1",
-    "nodemailer-mailgun-transport": "^2.1.5"
+    "nodemailer-mailgun-transport": "^2.1.5",
+    "openai": "^3.2.1"
   },
   "devDependencies": {
     "concurrently": "^8.0.1",

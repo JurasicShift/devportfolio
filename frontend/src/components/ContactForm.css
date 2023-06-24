@@ -62,18 +62,16 @@ input:focus {
 	color: #f5f0f0;
 	background-color: #e27429;
 	padding: 10px 20px 10px 20px;
-	/* font-weight: bold; */
 	letter-spacing: 1px;
-	transition: all 400ms;
+	transition: all 200ms;
 }
 
 .form__btn-btn:hover {
 	cursor: pointer;
-	/* background-color: #e26313; */
 	padding: 10px 30px 10px 30px;
 	border-radius: 30px;
-
 }
+
 
 @media only screen and (min-width: 730px) {
 	.form__div {

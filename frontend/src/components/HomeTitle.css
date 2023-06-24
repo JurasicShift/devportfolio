@@ -1,6 +1,12 @@
+@font-face {
+	font-family: hemi;
+	src: url('../fonts/hemi.otf');
+}
+
 .home__sections {
 	height: 100vh;
 	width: 100%;
+	position: fixed;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -15,9 +21,11 @@
 }
 
 .home__name {
-	font-size: 40px;
+	font-size: 30px;
 	text-align: center;
-	letter-spacing: 4px;
+	letter-spacing: 5px;
+	font-family: hemi;
+	margin-bottom: 4px;
 }
 
 .home__name span {
@@ -26,7 +34,7 @@
 }
 
 .home__text {
-	font-size: 25px;
+	font-size: 22px;
 	text-align: center;
 	letter-spacing: 8px;
 	line-height: 35px;
@@ -37,17 +45,39 @@
 	transition: all 1s ease;
 }
 
+@media only screen and (min-width: 536px) {
+
+	.home__name {
+		font-size: 35px;
+	}
+
+	.home__text {
+		font-size: 24px;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+
+	.home__name {
+		font-size: 40px;
+	}
+
+	.home__text {
+		font-size: 26px;
+	}
+}
+
 @media only screen and (min-width: 769px) {
 
 	.home__name {
 		font-size: 45px;
-		letter-spacing: 5px;
+		letter-spacing: 6px;
 	}
 
 	.home__text {
 		font-size: 28px;
 		line-height: 38px;
-		/* margin-left: 30px; */
+		
 	}
 }
 
@@ -55,13 +85,11 @@
 
 	.home__name {
 		font-size: 55px;
-		letter-spacing: 6px;
 	}
 
 	.home__text {
 		font-size: 30px;
 		line-height: 45px;
-		/* margin-left: 55px; */
 		letter-spacing: 9px;
 	}
 }
@@ -70,13 +98,11 @@
 
 	.home__name {
 		font-size: 60px;
-		letter-spacing: 6px;
 	}
 
 	.home__text {
-		font-size: 35px;
-		line-height: 45px;
-		/* margin-left: 65px; */
+		font-size: 33px;
+		line-height: 50px;
 		letter-spacing: 9px;
 	}
 }

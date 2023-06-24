@@ -4,6 +4,7 @@ import PageTitle from '../components/PageTitle';
 import AboutMe from '../components/AboutMe';
 
 const About = () => {
+
 	return (
 		<div>
 			<div className="about__page">
@@ -15,5 +16,6 @@ const About = () => {
 		</div>
 	);
 };
+
 
 export default About;
