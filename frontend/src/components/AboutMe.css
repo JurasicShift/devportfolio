@@ -71,24 +71,6 @@
 	justify-content: flex-end;
 }
 
-.spinner {
-	border: 3px solid transparent;
-	width: 25px;
-	height: 25px;
-	border-top-color: #1abc9c;
-	border-bottom-color: #3498db;
-	border-radius: 50%;
-	animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
 
 @media only screen and (min-width: 536px) {
 

@@ -4,6 +4,7 @@ import Draft from './AboutDraft';
 import AboutPhoto from './Photo';
 import ChatPhoto from '../imgs/chat3.png';
 import WordCloud from './TagCloud';
+import Spinner from './Spinner';
 import {ChatBtns, OriginBtn} from './AboutBtns';
 import {trimmer, parseCloud, parseParagraphs} from '../utilities/parsers';
 import { ToastContainer, toast } from 'react-toastify';
@@ -19,10 +20,6 @@ const AboutMe = () => {
 	const [cloud, setCloud] = useState(false);
 	const [theme, setTheme] = useState(false);
 
-	if(true) {
-		throw new Error("Forced Error Forced Error Forced ErrorForced Error");
-	}
-
 	useEffect(() => {
 		window.scrollTo({
 			top: 0,
@@ -30,8 +27,6 @@ const AboutMe = () => {
 			behavior: 'smooth',
 		});
 	}, [text]);
-
-
 
 
 	const toastOptions = {
@@ -54,7 +49,7 @@ const AboutMe = () => {
 
 	const handleRewrite = async e => {
 		const btnValue = e.target.value;
-		setAboutTitle(btnValue);
+	
 		if (btnValue === 'Themes') {
 			setTheme(true);
 		} else {
@@ -93,7 +88,7 @@ const AboutMe = () => {
 					const trimmed = trimmer(data.newText, '\n', false);
 					setText(trimmed);
 				}
-
+				setAboutTitle(btnValue);
 				setChat(true);
 				setLoading(false);
 			}, 500);
@@ -133,7 +128,7 @@ const AboutMe = () => {
 			<div className="chat">
 				<div className="chat__div">
 					<div className="chat__spinner">
-						{loading && <div className="spinner"></div>}
+						{loading && <Spinner />}
 					</div>
 					<div className="chat__text">
 						Use{' '}

@@ -51,8 +51,7 @@ const Draft = () => {
 				natural concomitant and outgrowth of his work with the Library Service.
 				With an Arts and Humanities background (MA Critial Theory, BA(Hons) Film
 				& Media Studies), and having little previous knowledge of STEM subjects, web
-				development emerged straight out of leftfield. Let me explain how this
-				came about.
+				development emerged straight out of leftfield. Here is the story of how this came to fruition.
 			</p>
 			<p className="aboutme__text">
 				Part of the mission statement of public libraries is to promote digital
@@ -95,7 +94,7 @@ const Draft = () => {
 				A turning point came in early 2020 when Michael was asked to run a code
 				club for kids. Having no experience with code he was hesitant but
 				figured, if kids can code then I can too. With this in mind he borrowed
-				a kids book on HTML and CSS and began experimenting at home. Struck by
+				a kids book on HTML and CSS and began experimenting. Struck by
 				the power of HTML and CSS to produce online content, their syntactical composition and
 				structural interrelation and the exchange
 				between technology and creativity, he was hooked. The kids book became an adult
@@ -129,8 +128,7 @@ const Draft = () => {
 			<p className="aboutme__text">
 				Beyond web development his interests are split between outdoor
 				activities and more academic pursuits. Michael has completed 5 marathons
-				and 6 half marathons up and down the UK. He enjoys travel and has
-				completed his advanced open water diving certificate in Indonesia. He
+				and 6 half marathons up and down the UK. He enjoys travel and gained his advanced open water diving certificate in Indonesia. He
 				recently walked the Cumbria Way and is currently training to swim the
 				length of Coniston Water (5.25 miles). Michael enjoys learning French
 				and reading French literature. His other reading interests include:

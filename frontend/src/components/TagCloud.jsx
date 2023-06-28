@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 const WordCloud = (props) => {
   const options = {
-    // Customize the size range of the tags
     size: {
       min: 12,
       max: 35,
