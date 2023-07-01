@@ -1,14 +1,21 @@
 import React from 'react';
 import HomeTitle from '../components/HomeTitle';
 import Icons from '../components/Icons';
+import Spinner from '../components/Spinner';
+import useReadyState from '../hooks/useReadyState';
 
 const Home = () => {
+	const [loading] = useReadyState();
 
     return (
-        <div>
+
+        <>
+        {loading ? <Spinner height="100px" width="100px" lg={true} /> :   <div>
             <HomeTitle name="Michael Whyte" role="web developer" />
             <Icons />
-        </div>
+        </div>}
+        </>
+      
     )
 }
 

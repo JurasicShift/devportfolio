@@ -48,7 +48,7 @@ const Draft = () => {
 			<p className="aboutme__text">
 				{' '}
 				Driven by a love of learning, his interest in web development is a
-				natural concomitant and outgrowth of his work with the Library Service.
+				natural concomitant and extension of his work with the Library Service.
 				With an Arts and Humanities background (MA Critial Theory, BA(Hons) Film
 				& Media Studies), and having little previous knowledge of STEM subjects, web
 				development emerged straight out of leftfield. Here is the story of how this came to fruition.

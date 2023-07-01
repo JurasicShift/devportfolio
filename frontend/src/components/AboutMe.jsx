@@ -48,6 +48,7 @@ const AboutMe = () => {
 	};
 
 	const handleRewrite = async e => {
+		e.preventDefault();
 		const btnValue = e.target.value;
 	
 		if (btnValue === 'Themes') {
@@ -80,7 +81,6 @@ const AboutMe = () => {
 				if (btnValue === 'Cloud') {
 					setCloud(true);
 					const trimmed = trimmer(data.newText, ' ', true);
-					
 					setText(trimmed);
 				
 				} else {
@@ -114,9 +114,9 @@ const AboutMe = () => {
 		<div className="aboutme">
 			<div className="aboutme__div">
 				{
-					chat ? <div className="about__title">{aboutTitle}</div> : null
+					chat ? <div className="about__title">{aboutTitle}</div> : <AboutPhoto />
 				}
-				<AboutPhoto />
+				
 				{
 					!chat ? < Draft /> : cloud ? < WordCloud tags={parseCloud(text)} /> : parseParagraphs(text, theme)
 					
