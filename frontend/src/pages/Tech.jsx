@@ -1,9 +1,9 @@
 import React from 'react';
-import PageTitle from '../components/PageTitle';
+import PageTitle from '../components/Utilities/PageTitle';
 import './Tech.css';
-import CarouselItems from '../components/CarouselItem';
-import Icons from '../components/Icons';
-import Spinner from '../components/Spinner';
+import CarouselItems from '../components/Tech/CarouselItem';
+import Icons from '../components/Utilities/Icons';
+import Spinner from '../components/Utilities/Spinner';
 import useReadyState from '../hooks/useReadyState';
 
 function Tech() {

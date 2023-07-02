@@ -1,9 +1,9 @@
 import React from 'react';
 import './Contact.css';
-import ContactForm from '../components/ContactForm';
-import PageTitle from '../components/PageTitle';
-import Icons from '../components/Icons';
-import Spinner from '../components/Spinner';
+import ContactForm from '../components/Contact/ContactForm';
+import PageTitle from '../components/Utilities/PageTitle';
+import Icons from '../components/Utilities/Icons';
+import Spinner from '../components/Utilities/Spinner';
 import useReadyState from '../hooks/useReadyState';
 
 const Contact = () => {

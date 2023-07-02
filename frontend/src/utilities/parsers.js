@@ -1,4 +1,3 @@
-import React from 'react';
 
 
 const generateRandomNumber = () => {
@@ -30,26 +29,7 @@ const parseCloud = text => {
     return data;
 };
 
-const parseParagraphs = (text, theme) => {
-    const parsedParagraphs = text.map((paragraph, index) => {
-        const parsedParagraph = paragraph.replace(/&apos;/g, "'");
-        const className =
-            index === 0 && theme === false ? 'aboutme__text has-dropcap' : 'aboutme__text';
-        return (
-            <p
-                className={className}
-                key={index}
-                dangerouslySetInnerHTML={{ __html: parsedParagraph }}
-            />
-        );
-    });
-
-    return parsedParagraphs;
-
-};
-
 export {
     trimmer,
     parseCloud,
-    parseParagraphs
 }

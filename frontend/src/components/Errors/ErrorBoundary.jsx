@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Background from './Background';
+import Background from '../Utilities/Background';
 import { Error } from './ErrorPage';
 
 class ErrorBoundary extends Component {

@@ -82,7 +82,7 @@
 
 @font-face {
 	font-family: 'sciFi';
-	src: url('../fonts/font3.otf');
+	src: url('../../fonts/font3.otf');
 }
 
 .carousel__controls-text {

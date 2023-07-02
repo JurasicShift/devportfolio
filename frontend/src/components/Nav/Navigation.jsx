@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import './Navigation.css';
-import useViewport from '../hooks/useViewport';
-import Icons from './Icons';
+import useViewport from '../../hooks/useViewport';
+import Icons from '../Utilities/Icons';
 
 const activeStyle = {
 	opacity: "1"

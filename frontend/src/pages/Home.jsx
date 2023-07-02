@@ -1,7 +1,7 @@
 import React from 'react';
-import HomeTitle from '../components/HomeTitle';
-import Icons from '../components/Icons';
-import Spinner from '../components/Spinner';
+import HomeTitle from '../components/Home/HomeTitle';
+import Icons from '../components/Utilities/Icons';
+import Spinner from '../components/Utilities/Spinner';
 import useReadyState from '../hooks/useReadyState';
 
 const Home = () => {

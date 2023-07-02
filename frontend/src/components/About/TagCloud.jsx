@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import { TagCloud } from 'react-tagcloud';
 import PropTypes from 'prop-types';
 
@@ -35,4 +35,4 @@ WordCloud.propTypes = {
     tags: PropTypes.array
 }
 
-export default WordCloud;
+export default memo(WordCloud);

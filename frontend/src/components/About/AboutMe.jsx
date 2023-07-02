@@ -2,21 +2,22 @@ import React, { useState, useEffect } from 'react';
 import './AboutMe.css';
 import Draft from './AboutDraft';
 import AboutPhoto from './Photo';
-import ChatPhoto from '../imgs/chat3.png';
+import ChatPhoto from '../../imgs/chat3.png';
 import WordCloud from './TagCloud';
-import Spinner from './Spinner';
+import Spinner from '../Utilities/Spinner';
+import ParsedParagraphs from './AboutParsedParagraphs';
 import {ChatBtns, OriginBtn} from './AboutBtns';
-import {trimmer, parseCloud, parseParagraphs} from '../utilities/parsers';
+import {trimmer, parseCloud } from '../../utilities/parsers';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import aboutString from '../data/htmlString';
+import aboutString from '../../data/htmlString';
 const baseUrl = 'http://localhost:5000';
 
 const AboutMe = () => {
 	const [loading, setLoading] = useState(false);
-	const [aboutTitle, setAboutTitle] = useState('');
 	const [text, setText] = useState('');
-	const [chat, setChat] = useState(false);
+	const [cloudText, setCloudText] = useState('');
+	const [displayMode, setDisplayMode] = useState("Draft");
 	const [cloud, setCloud] = useState(false);
 	const [theme, setTheme] = useState(false);
 
@@ -42,7 +43,8 @@ const AboutMe = () => {
 
 	const handleOriginal = () => {
 		setText('');
-		setChat(false);
+		setCloudText('');
+		setDisplayMode("Draft");
 		setCloud(false);
 		setTheme(false);
 	};
@@ -50,13 +52,6 @@ const AboutMe = () => {
 	const handleRewrite = async e => {
 		e.preventDefault();
 		const btnValue = e.target.value;
-	
-		if (btnValue === 'Themes') {
-			setTheme(true);
-		} else {
-			setTheme(false);
-
-		}
 		
 			try {
 			setLoading(true);
@@ -81,15 +76,20 @@ const AboutMe = () => {
 				if (btnValue === 'Cloud') {
 					setCloud(true);
 					const trimmed = trimmer(data.newText, ' ', true);
-					setText(trimmed);
+					const parsed = parseCloud(trimmed);
+					setCloudText(parsed);
 				
 				} else {
 					if(cloud) setCloud(false);
 					const trimmed = trimmer(data.newText, '\n', false);
 					setText(trimmed);
 				}
-				setAboutTitle(btnValue);
-				setChat(true);
+				setDisplayMode(btnValue);
+				if (btnValue === 'Themes') {
+					setTheme(true);
+				} else {
+					setTheme(false);
+				}
 				setLoading(false);
 			}, 500);
 		} catch (error) {
@@ -114,16 +114,21 @@ const AboutMe = () => {
 		<div className="aboutme">
 			<div className="aboutme__div">
 				{
-					chat ? <div className="about__title">{aboutTitle}</div> : <AboutPhoto />
+					displayMode !== "Draft" ? <div className="about__title">{displayMode}</div> : <AboutPhoto />
+				}
+				{
+					displayMode === "Draft" ? <Draft /> : null
+				}
+				{
+					displayMode === "Cloud" ? < WordCloud tags={cloudText} /> : null
+				}
+				{
+					displayMode === "Summary" || displayMode === "Themes" ? <ParsedParagraphs text={text} theme={theme} /> : null
+				}
+				{
+					displayMode !== "Draft" ? < OriginBtn cloud={cloud} handler={handleOriginal}/> : null
 				}
 				
-				{
-					!chat ? < Draft /> : cloud ? < WordCloud tags={parseCloud(text)} /> : parseParagraphs(text, theme)
-					
-				}
-				{
-					chat ? < OriginBtn cloud={cloud} handler={handleOriginal}/> : null
-				}
 			</div>
 			<div className="chat">
 				<div className="chat__div">

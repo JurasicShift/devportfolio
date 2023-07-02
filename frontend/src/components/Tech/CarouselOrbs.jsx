@@ -1,6 +1,6 @@
 import React from 'react';
-import useViewport from '../hooks/useViewport';
-import useSphereEffects from '../hooks/useSphereEffects';
+import useViewport from '../../hooks/useViewport';
+import useSphereEffects from '../../hooks/useSphereEffects';
 
 const OrbFactory = props => {
 	const { itemStyleObj, imgStyleObj } = useViewport();

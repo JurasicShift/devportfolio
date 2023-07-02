@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import './ContactForm.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Validation, isObjectEmpty } from '../hooks/validation';
+import { Validation, isObjectEmpty } from '../../utilities/validation';
 const baseUrl = 'http://localhost:5000';
 
 const ContactForm = () => {

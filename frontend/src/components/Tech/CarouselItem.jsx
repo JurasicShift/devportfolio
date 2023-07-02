@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import './CarouselItem.css';
-import useViewport from '../hooks/useViewport';
-import throttle from '../hooks/useThrottle';
-import allTech from '../data/staticCarousel';
+import useViewport from '../../hooks/useViewport';
+import throttle from '../../hooks/useThrottle';
+import allTech from '../../data/staticCarousel';
 import OrbFactory from './CarouselOrbs';
 
 function CarouselItem(props) {

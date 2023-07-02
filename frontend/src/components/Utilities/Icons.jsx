@@ -34,7 +34,7 @@ function Icons(props) {
 					rel="noopener noreferrer"
 				>
 					<img
-						src={require('../imgs/linked.svg').default}
+						src={require('../../imgs/linked.svg').default}
 						alt="LinkedIn Icon"
 						style={path.includes('/about') && props.id ? linkAdjust : null}
 					></img>
@@ -47,7 +47,7 @@ function Icons(props) {
 					rel="noopener noreferrer"
 				>
 					<img
-						src={require('../imgs/git.svg').default}
+						src={require('../../imgs/git.svg').default}
 						alt="Git Hub Icon"
 					></img>
 				</a>

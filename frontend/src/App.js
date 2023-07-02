@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Background from './components/Background';
-import Navigation from './components/Navigation';
+import Background from './components/Utilities/Background';
+import Navigation from './components/Nav/Navigation';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Tech from './pages/Tech';
 import Contact from './pages/Contact';
-import ErrorBoundary from './components/ErrorBoundary';
-import { NotFound } from './components/ErrorPage';
+import ErrorBoundary from './components/Errors/ErrorBoundary';
+import { NotFound } from './components/Errors/ErrorPage';
 const prefix = '/michaelwhytewebdev';
 
 const App = () => {

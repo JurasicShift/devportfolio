@@ -1,6 +1,6 @@
 @font-face {
 	font-family: hemi;
-	src: url('../fonts/hemi.otf');
+	src: url('../../fonts/hemi.otf');
 }
 
 .home__sections {

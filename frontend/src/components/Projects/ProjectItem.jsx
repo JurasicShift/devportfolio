@@ -4,9 +4,9 @@ import InfoSvg from './InfoSvg';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDraftingCompass } from '@fortawesome/free-solid-svg-icons';
-import  useViewport  from '../hooks/useViewport';
+import  useViewport  from '../../hooks/useViewport';
 import './ProjectItem.css';
-import Icons from './Icons';
+import Icons from '../Utilities/Icons';
 
 //add onFocus and onBlur for mobile devices!!!
 
@@ -109,7 +109,7 @@ function ProjectItem(props) {
 							<div className="icons__Git">
 								<a href={item.gitUrl} target="_blank" rel="noopener noreferrer">
 									<img
-										src={require('../imgs/git.svg').default}
+										src={require('../../imgs/git.svg').default}
 										alt="Git Hub Icon"
 										className="project__z"
 									></img>

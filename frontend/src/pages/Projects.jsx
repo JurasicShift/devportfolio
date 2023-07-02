@@ -1,10 +1,10 @@
 import React from 'react';
 import './Projects.css';
-import ProjectItem from '../components/ProjectItem';
+import ProjectItem from '../components/Projects/ProjectItem';
 import ProjectData from '../data/staticData';
-import PageTitle from '../components/PageTitle';
-import Icons from '../components/Icons';
-import Spinner from '../components/Spinner';
+import PageTitle from '../components/Utilities/PageTitle';
+import Icons from '../components/Utilities/Icons';
+import Spinner from '../components/Utilities/Spinner';
 import useReadyState from '../hooks/useReadyState';
 import useViewport from '../hooks/useViewport';
 

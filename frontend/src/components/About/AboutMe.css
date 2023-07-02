@@ -1,6 +1,6 @@
 @font-face {
 	font-family: first-letter;
-	src: url('../fonts/hemi.otf');
+	src: url('../../fonts/hemi.otf');
 }
 
 .aboutme {

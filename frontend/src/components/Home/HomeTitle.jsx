@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './HomeTitle.css';
-import stateFactory from '../hooks/stateFactory';
-import stateUpdater from '../hooks/stateUpdater';
+import stateFactory from '../../utilities/stateFactory';
+import stateUpdater from '../../utilities/stateUpdater';
 import TitleGenerator from './HomeTitleGen';
 import PageMoniker from './PageMoniker';
 import HomeStars from './HomeStars';

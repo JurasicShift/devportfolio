@@ -1,8 +1,8 @@
 import React from 'react';
 import './About.css';
-import PageTitle from '../components/PageTitle';
-import AboutMe from '../components/AboutMe';
-import Spinner from '../components/Spinner';
+import PageTitle from '../components/Utilities/PageTitle';
+import AboutMe from '../components/About/AboutMe';
+import Spinner from '../components/Utilities/Spinner';
 import useReadyState from '../hooks/useReadyState';
 
 const About = () => {

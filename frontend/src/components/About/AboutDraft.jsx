@@ -1,8 +1,8 @@
 import React from 'react';
-import CoderDojo from '../imgs/CoderDojo.svg';
-import LearnMyWay from '../imgs/lmw.png';
-import DistanceLearning from '../imgs/distanceLearning.png';
-import Udemy from '../imgs/udemy.svg';
+import CoderDojo from '../../imgs/CoderDojo.svg';
+import LearnMyWay from '../../imgs/lmw.png';
+import DistanceLearning from '../../imgs/distanceLearning.png';
+import Udemy from '../../imgs/udemy.svg';
 
 const Draft = () => {
 	const dojoStyle = {
