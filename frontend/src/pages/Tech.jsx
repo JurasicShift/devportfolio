@@ -5,10 +5,11 @@ import CarouselItems from '../components/Tech/CarouselItem';
 import Icons from '../components/Utilities/Icons';
 import Spinner from '../components/Utilities/Spinner';
 import useReadyState from '../hooks/useReadyState';
+import { titleTab } from '../utilities/titleFn';
 
 function Tech() {
 	const [loading] = useReadyState();
-
+	titleTab('Tech');
 	return (
 		<>
 			{loading ? (

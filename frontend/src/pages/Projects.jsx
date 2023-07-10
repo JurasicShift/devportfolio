@@ -7,12 +7,13 @@ import Icons from '../components/Utilities/Icons';
 import Spinner from '../components/Utilities/Spinner';
 import useReadyState from '../hooks/useReadyState';
 import useViewport from '../hooks/useViewport';
+import { titleTab } from '../utilities/titleFn';
 
 function Projects() {
 	const [loading] = useReadyState();
 	const { width } = useViewport();
 	const breakpoint = 1200;
-
+	titleTab('Projects');
 
 	return loading ? (
 			<Spinner height="100px" width="100px" lg={true} />

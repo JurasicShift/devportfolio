@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const helmet = require("helmet");
 const routes = require('./routes/index');
 
 const environment = process.env.NODE_ENV || 'development';
@@ -13,7 +14,7 @@ if (environment !== "production") {
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(helmet());
 
 app.use('/', routes);
 app.listen(port, () => console.log(`listening on port: ${port}`));

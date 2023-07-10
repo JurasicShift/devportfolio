@@ -4,10 +4,11 @@ import PageTitle from '../components/Utilities/PageTitle';
 import AboutMe from '../components/About/AboutMe';
 import Spinner from '../components/Utilities/Spinner';
 import useReadyState from '../hooks/useReadyState';
+import { titleTab } from '../utilities/titleFn';
 
 const About = () => {
 	const [loading] = useReadyState();
-
+	titleTab('About');
 	return (
 		<>
 			{loading ? (

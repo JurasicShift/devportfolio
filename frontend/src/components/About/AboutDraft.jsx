@@ -13,16 +13,16 @@ const Draft = () => {
 	};
 
 	const lmwStyle = {
-		height: '40px',
+		height: '30px',
 		position: 'relative',
-		top: '12px',
-		margin: '0 3px 0 5px',
+		top: '8px',
+		margin: '0 0 0 5px',
 	};
 
 	const distanceLearningStyle = {
-		height: '40px',
+		height: '30px',
 		position: 'relative',
-		top: '12px',
+		top: '8px',
 		margin: '0 2px 0 5px',
 	};
 
@@ -41,7 +41,7 @@ const Draft = () => {
 	return (
 		<>
 			<p className="aboutme__text has-dropcap">
-				Michael Whyte is a self taught M.E.R.N. stack devleoper based in
+				Michael Whyte is a self taught M.E.R.N. stack developer based in
 				Lancaster, England. Michael works as a library assistant and is
 				currently seeking employment opportunities in web development.{' '}
 			</p>
@@ -49,8 +49,8 @@ const Draft = () => {
 				{' '}
 				Driven by a love of learning, his interest in web development is a
 				natural concomitant and extension of his work with the Library Service.
-				With an Arts and Humanities background (MA Critial Theory, BA(Hons) Film
-				& Media Studies), and having little previous knowledge of STEM subjects, web
+				Coming from an Arts and Humanities background (MA Critical Theory, BA(Hons) Film
+				& Media Studies), and having little previous knowledge of STEM subjects, for Michael web
 				development emerged straight out of leftfield. Here is the story of how this came to fruition.
 			</p>
 			<p className="aboutme__text">
@@ -88,7 +88,7 @@ const Draft = () => {
 						/>
 					</a>
 				</span>
-				.
+				. The seeds were sown for a growing interest in the active use of computers.
 			</p>
 			<p className="aboutme__text">
 				A turning point came in early 2020 when Michael was asked to run a code
@@ -125,7 +125,7 @@ const Draft = () => {
 				</span>
 				for kids aged 7 – 11.
 			</p>
-			<p className="aboutme__text">
+			<p className="aboutme__text aboutme__text--mod">
 				Beyond web development his interests are split between outdoor
 				activities and more academic pursuits. Michael has completed 5 marathons
 				and 6 half marathons up and down the UK. He enjoys travel and gained his advanced open water diving certificate in Indonesia. He

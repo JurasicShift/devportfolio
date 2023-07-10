@@ -15,7 +15,7 @@
 	margin: 50px 20px 30px 20px;
 	background: rgba(0, 0, 0, 0.56);
 	box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-	padding: 40px 30px 20px 30px;
+	padding: 40px 30px 30px 30px;
 	border-radius: 5px;
 	font-size: 16px;
 	line-height: 30px;
@@ -35,6 +35,10 @@
 
 .aboutme__text {
 	margin-bottom: 20px;
+}
+
+.aboutme__text--mod {
+	margin-bottom: 0px;
 }
 
 .has-dropcap::first-letter {

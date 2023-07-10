@@ -3,10 +3,11 @@ import HomeTitle from '../components/Home/HomeTitle';
 import Icons from '../components/Utilities/Icons';
 import Spinner from '../components/Utilities/Spinner';
 import useReadyState from '../hooks/useReadyState';
+import { titleTab } from '../utilities/titleFn';
 
 const Home = () => {
 	const [loading] = useReadyState();
-
+    titleTab('Home');
     return (
 
         <>
