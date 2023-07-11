@@ -27,7 +27,7 @@ const AboutMe = () => {
 			left: 0,
 			behavior: 'smooth',
 		});
-	}, [text]);
+	}, [text, cloudText]);
 
 
 	const toastOptions = {
@@ -142,7 +142,7 @@ const AboutMe = () => {
 								<img src={ChatPhoto} style={chatStyle} alt="chat g p t" />
 							</div>
 						</span>{' '}
-						ChatGPT to summarize, or organise by theme or word cloud.
+						ChatGPT to organise by word cloud, summary or theme.
 					</div>
 					<div className="chat__form">
 						<ChatBtns handler={handleRewrite} />

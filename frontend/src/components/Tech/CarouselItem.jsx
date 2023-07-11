@@ -342,14 +342,10 @@ function CarouselItem(props) {
 		opacity: '0',
 	};
 
-	const carouselDescent = {
-		top: "-5%"
-	}
-
 
 	return (
 		<>
-			<div className="carousel__wrapper" style={!startValue.current ? carouselDescent : null}>
+			<div className="carousel__wrapper">
 				<div
 					className="carousel__wrapper-items"
 					style={showItemArr ? show : hide}

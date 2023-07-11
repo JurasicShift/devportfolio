@@ -5,16 +5,16 @@ const useReadyState = () => {
 
 	useEffect(() => {
 		const checkAppLoaded = () => {
-			if (document.readyState === 'complete') setLoading(false);
+				setLoading(false);
 		};
 
-		document.addEventListener('readystatechange', checkAppLoaded);
+		window.addEventListener('load', checkAppLoaded);
 
 		if (loading) {
 			checkAppLoaded();
 		} else
 			return () => {
-				document.removeEventListener('readystatechange', checkAppLoaded);
+				window.removeEventListener('load', checkAppLoaded);
 			};
 	}, [loading]);
 

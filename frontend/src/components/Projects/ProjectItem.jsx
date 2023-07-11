@@ -69,7 +69,11 @@ function ProjectItem(props) {
 		}
 
 		let marginAdd = {
-			marginBottom: "100px"
+			marginBottom: "50px"
+		}
+
+		let fontSm = {
+			fontSize: "18px"
 		}
 
 		return (
@@ -98,7 +102,7 @@ function ProjectItem(props) {
 					<div className="project__info">
 						<div className="project__info--flex">
 							<a href={item.url} target="_blank" rel="noopener noreferrer">
-								<h3 className="project__z">{item.title}</h3>
+								<h3 className="project__z" style={idx === 3 ? fontSm : null}>{item.title}</h3>
 							</a>
 							<a href={item.url} target="_blank"  rel="noopener noreferrer">
 							<FontAwesomeIcon icon={faDraftingCompass} className='project__compass project__z'/>
