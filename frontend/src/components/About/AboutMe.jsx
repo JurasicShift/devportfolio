@@ -11,7 +11,7 @@ import {trimmer, parseCloud } from '../../utilities/parsers';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import aboutString from '../../data/htmlString';
-const baseUrl = 'http://localhost:5000';
+// const baseUrl = 'http://localhost:5000';
 
 const AboutMe = () => {
 	const [loading, setLoading] = useState(false);
@@ -57,7 +57,7 @@ const AboutMe = () => {
 			setLoading(true);
 			toast.info('Awaiting Response!!', toastOptions);
 
-			const response = await fetch(`${baseUrl}/rewrite`, {
+			const response = await fetch(`/rewrite`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

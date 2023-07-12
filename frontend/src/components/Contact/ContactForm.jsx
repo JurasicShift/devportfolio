@@ -3,7 +3,7 @@ import './ContactForm.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Validation, isObjectEmpty } from '../../utilities/validation';
-const baseUrl = 'http://localhost:5000';
+// const baseUrl = 'http://localhost:5000';
 
 const ContactForm = () => {
 	const [errors, setErrors] = useState({});
@@ -33,7 +33,7 @@ const ContactForm = () => {
 
 		if (isObjectEmpty(errorMessage)) {
 			setErrors(errorMessage);
-			fetch(`${baseUrl}/contact`, {
+			fetch(`/contact`, {
 				method: 'POST',
 				headers: {
 					'Content-type': 'application/json',

@@ -9,7 +9,7 @@ import Tech from './pages/Tech';
 import Contact from './pages/Contact';
 import ErrorBoundary from './components/Errors/ErrorBoundary';
 import { NotFound } from './components/Errors/ErrorPage';
-const prefix = '/michaelwhytewebdev';
+// const prefix = '/michaelwhytewebdev';
 
 const App = () => {
 	return (
@@ -20,11 +20,10 @@ const App = () => {
 					<Navigation />
 					<Routes>
 						<Route path={`/`} element={<Home />}></Route>
-						<Route path={`${prefix}/`} element={<Home />}></Route>
-						<Route path={`${prefix}/about`} element={<About />}></Route>
-						<Route path={`${prefix}/projects`} element={<Projects />}></Route>
-						<Route path={`${prefix}/tech`} element={<Tech />}></Route>
-						<Route path={`${prefix}/contact`} element={<Contact />}></Route>
+						<Route path={`/about`} element={<About />}></Route>
+						<Route path={`/projects`} element={<Projects />}></Route>
+						<Route path={`/tech`} element={<Tech />}></Route>
+						<Route path={`/contact`} element={<Contact />}></Route>
 						<Route path="*" element={<NotFound />} />
 					</Routes>
 				</ErrorBoundary>
