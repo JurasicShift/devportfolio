@@ -8,14 +8,14 @@ const allProjects = [
         img:  rookieSs,
         type: "Front End",
         title: "Marathon Rookie",
-        url: "https://marathonrookie-1749c.firebaseapp.com",
+        url: "https://www.marathon-rookie.co.uk",
         gitUrl: "https://github.com/JurasicShift/marathonrookie",
     }, 
     {
         img: coinSs, 
         type: "Front End",
         title: "CoinTracker",
-        url: "https://cointracker-c6bc7.firebaseapp.com/",
+        url: "https://www.coin-tracker.co.uk",
         gitUrl: "https://github.com/JurasicShift/cointracker",
     }, 
     {
