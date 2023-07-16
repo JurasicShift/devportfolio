@@ -43,7 +43,7 @@ function Navigation() {
 	const [togOpacity, setTogOpacity] = useState('0');
 	const { width } = useViewport();
 	const breakpoint1 = 992;
-	const prefix = 'michaelwhytewebdev/';
+	// const prefix = 'michaelwhytewebdev/';
 
 	const handleToggleClick = () => {
 		const navState = openNav;
@@ -91,7 +91,7 @@ function Navigation() {
 					<li>
 						<NavLink
 							className="link"
-							to={prefix}
+							to={'/'}
 							style={({ isActive }) => (isActive ? activeStyle : undefined)}
 							onClick={width <= breakpoint1 ? handleToggleClick : null}
 						>
@@ -104,7 +104,7 @@ function Navigation() {
 					<li>
 						<NavLink
 							className="link"
-							to={`${prefix}about`}
+							to={`/about`}
 							style={({ isActive }) => (isActive ? activeStyle : undefined)}
 							onClick={width <= breakpoint1 ? handleToggleClick : null}
 						>
@@ -117,7 +117,7 @@ function Navigation() {
 					<li>
 						<NavLink
 							className="link"
-							to={`${prefix}projects`}
+							to={`/projects`}
 							style={({ isActive }) => (isActive ? activeStyle : undefined)}
 							onClick={width <= breakpoint1 ? handleToggleClick : null}
 						>
@@ -130,7 +130,7 @@ function Navigation() {
 					<li>
 						<NavLink
 							className="link"
-							to={`${prefix}tech`}
+							to={`/tech`}
 							style={({ isActive }) => (isActive ? activeStyle : undefined)}
 							onClick={width <= breakpoint1 ? handleToggleClick : null}
 						>
@@ -143,7 +143,7 @@ function Navigation() {
 					<li>
 						<NavLink
 							className="link"
-							to={`${prefix}contact`}
+							to={`/contact`}
 							style={({ isActive }) => (isActive ? activeStyle : undefined)}
 							onClick={width <= breakpoint1 ? handleToggleClick : null}
 						>
