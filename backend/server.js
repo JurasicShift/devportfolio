@@ -18,11 +18,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(helmet());
 
-// app.use((req, res, next) => {
-//   res.setHeader('Origin-Agent-Cluster', '?1');
-//   res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
-//   next();
-// });
+app.use((req, res, next) => {
+  res.setHeader('Origin-Agent-Cluster', '?1');
+  res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+  next();
+});
 
 app.use('/', routes);
 
