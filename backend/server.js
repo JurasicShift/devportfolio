@@ -1,6 +1,7 @@
-const path = require('path');
+
 const express = require("express");
 const cors = require("cors");
+const path = require('path');
 const app = express();
 const helmet = require("helmet");
 const routes = require('./routes/index');
@@ -17,11 +18,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(helmet());
 
-app.use((req, res, next) => {
-  res.setHeader('Origin-Agent-Cluster', '?1');
-  res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader('Origin-Agent-Cluster', '?1');
+//   res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+//   next();
+// });
 
 app.use('/', routes);
 
@@ -31,5 +32,7 @@ if(process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../frontend/build')));
 
   app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')));
+} else {
+  app.get('/', (req, res) => res.send('Please set to production'));
 }
 app.listen(port, () => console.log(`listening on port: ${port}`));
