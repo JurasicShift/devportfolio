@@ -11,6 +11,7 @@ import {trimmer, parseCloud } from '../../utilities/parsers';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import aboutString from '../../data/htmlString';
+import useViewport from '../../hooks/useViewport';
 // const baseUrl = 'http://localhost:5000';
 
 const AboutMe = () => {
@@ -20,6 +21,8 @@ const AboutMe = () => {
 	const [displayMode, setDisplayMode] = useState("Draft");
 	const [cloud, setCloud] = useState(false);
 	const [theme, setTheme] = useState(false);
+	const { width } = useViewport(); 
+	console.log("width:", width);
 
 	useEffect(() => {
 		window.scrollTo({
@@ -115,6 +118,9 @@ const AboutMe = () => {
 			<div className="aboutme__div">
 				{
 					displayMode !== "Draft" ? <div className="about__title">{displayMode}</div> : <AboutPhoto />
+				}
+				{
+					displayMode !== "Draft" && width >= 650 ?  <AboutPhoto /> : null
 				}
 				{
 					displayMode === "Draft" ? <Draft /> : null
