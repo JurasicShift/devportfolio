@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dedd3bba.css",
+    "main.js": "/static/js/main.842d716f.js",
+    "static/media/bgImg.jpg": "/static/media/bgImg.c77a730dda07c59d57a4.jpg",
+    "static/media/justeScreenShot.png": "/static/media/justeScreenShot.3110e99a269a3d23a521.png",
+    "static/media/portfolio1.jpg": "/static/media/portfolio1.ea39d3933aff71a3c50a.jpg",
+    "static/media/fallenScreenShot.png": "/static/media/fallenScreenShot.9d5eb25bca9038bc9b40.png",
+    "static/media/rookieScreenShot.png": "/static/media/rookieScreenShot.08316b76735861fdb795.png",
+    "static/media/javascript.png": "/static/media/javascript.ba0a928588f389c91981.png",
+    "static/media/html.png": "/static/media/html.e72a5da2142e3bbf4b59.png",
+    "static/media/hemi.otf": "/static/media/hemi.9dbe8621fcb9817aecca.otf",
+    "static/media/font3.otf": "/static/media/font3.c98109ea104fcee50b05.otf",
+    "static/media/coinTrackerScreenShot.png": "/static/media/coinTrackerScreenShot.d9871dc784a363b72c0c.png",
+    "static/media/mongoose.png": "/static/media/mongoose.998152e4bc5fdd366c2c.png",
+    "static/media/bootstrap.png": "/static/media/bootstrap.9cc938d1c1c7ae7297ea.png",
+    "static/media/ejs.png": "/static/media/ejs.1c5caf3ced96b96d71c5.png",
+    "static/media/css.png": "/static/media/css.1334cb45a7d5ad096543.png",
+    "static/media/react.png": "/static/media/react.ef28a7569ef18dd72579.png",
+    "static/media/chartjs.png": "/static/media/chartjs.539821b5f0aad17cd61a.png",
+    "static/media/chat3.png": "/static/media/chat3.102b7026c4040c45b6eb.png",
+    "static/media/node.png": "/static/media/node.fb1a26c217122a83cc52.png",
+    "static/media/expressjs.png": "/static/media/expressjs.d61ef3d53f792ced8df2.png",
+    "static/media/lmw.png": "/static/media/lmw.d8bdf010cd64606cdfbb.png",
+    "static/media/CoderDojo.svg": "/static/media/CoderDojo.6537f2167a47b24580b591d66312457e.svg",
+    "static/media/udemy.svg": "/static/media/udemy.ac64b9eb547dc3795f53173b290203d9.svg",
+    "index.html": "/index.html",
+    "static/media/git.svg": "/static/media/git.581678157f6aedf7817850bdb47527c8.svg",
+    "static/media/linked.svg": "/static/media/linked.dc0adb5df28e852cb077df9fa21d02c4.svg",
+    "main.dedd3bba.css.map": "/static/css/main.dedd3bba.css.map",
+    "main.842d716f.js.map": "/static/js/main.842d716f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dedd3bba.css",
+    "static/js/main.842d716f.js"
+  ]
+}
