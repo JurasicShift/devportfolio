@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "development portfolio",
   "private": true,
-  "main": "server.js",
+  "main": "backend/server.js",
   "engines": { "npm": "8.17.0", "node": "16.16.0" },
   
   "scripts": {
