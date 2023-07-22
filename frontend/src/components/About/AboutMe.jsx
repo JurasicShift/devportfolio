@@ -69,7 +69,7 @@ const AboutMe = () => {
 			setLoading(true);
 			toast.info('Awaiting Response!!', toastOptions);
 
-			const response = await fetch(`http://localhost:5000/rewrite`, {
+			const response = await fetch(`/rewrite`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

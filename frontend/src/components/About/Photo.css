@@ -2,8 +2,8 @@
 
 .photo__div {
     float: right;
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     overflow: hidden;
     border: 10px solid rgba(168, 239, 255, 0.1);
