@@ -10,7 +10,7 @@
 	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(149, 165, 166, 0.2));
 	box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 	border-radius: 5px;
-	padding: 40px 20px 30px 20px;
+	padding: 20px 20px 10px 20px;
 }
 
 .form__form {
@@ -20,7 +20,7 @@
 
 .form__label,
 .form__input {
-	margin: 10px 0 0 0;
+	margin: 5px 0 0 0;
 }
 
 .form__input {
@@ -44,7 +44,6 @@
 	transition: opacity 200ms ease;
 }
 
-
 textarea:focus,
 input:focus {
 	outline: none;
@@ -53,7 +52,7 @@ input:focus {
 .form__btn {
 	display: flex;
 	justify-content: center;
-	margin-top: 30px;
+	margin-top: 0px;
 }
 
 .form__btn-btn {
@@ -72,12 +71,26 @@ input:focus {
 	border-radius: 30px;
 }
 
+@media only screen and (min-width: 350px) {
+	.form__div {
+		padding: 40px 20px 30px 20px;
+	}
+
+	.form__label,
+	.form__input {
+		margin: 10px 0 0 0;
+	}
+
+	.form__btn {
+		margin-top: 30px;
+	}
+}
+
 @media only screen and (max-height: 768px) {
 	.form {
 		top: 100px;
 	}
 }
-
 
 @media only screen and (min-width: 730px) {
 	.form__div {
@@ -89,8 +102,7 @@ input:focus {
 	}
 }
 
-@media only screen and (min-width: 992px) and ( min-height: 768px ){
-
+@media only screen and (min-width: 992px) and (min-height: 768px) {
 	.form {
 		top: 140px;
 	}
@@ -107,14 +119,13 @@ input:focus {
 		width: 350px;
 	}
 
-    textarea.form__input {
-        height: 80px;
-    }
+	textarea.form__input {
+		height: 80px;
+	}
 }
 
-@media only screen and (min-width: 992px) { 
-    .form__div {
-        padding: 45px 30px 40px 30px;
-
-    }
+@media only screen and (min-width: 992px) {
+	.form__div {
+		padding: 45px 30px 40px 30px;
+	}
 }

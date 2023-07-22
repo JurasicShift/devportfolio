@@ -12,12 +12,19 @@ const Contact = () => {
 	titleTab('Contact');
 	return (
 		<>
-			{loading ? <Spinner height="100px" width="100px" lg={true} /> :
-			<div className="contact">
-				<PageTitle text="Contact" />
-				<ContactForm />
-				<Icons />
-			</div>}
+			{loading ? (
+				<Spinner height="100px" width="100px" lg={true} />
+			) : (
+				<div>
+					<div className="contact">
+						<PageTitle text="Contact" />
+					</div>
+					<div className="contact__form">
+						<ContactForm />
+					</div>
+					<Icons />
+				</div>
+			)}
 		</>
 	);
 };

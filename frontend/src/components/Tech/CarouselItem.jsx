@@ -345,6 +345,7 @@ function CarouselItem(props) {
 
 	return (
 		<>
+			<div className="carousel">
 			<div className="carousel__wrapper">
 				<div
 					className="carousel__wrapper-items"
@@ -362,6 +363,7 @@ function CarouselItem(props) {
 						 <OrbFactory arr={dupeCurrentTech} />
 					</div>
 				</div>
+			</div>
 			</div>
 			<div className="carousel__controls">
 				<button className=" carousel__controls-btn btn-left" onClick={btnLeft}>

@@ -6,8 +6,8 @@ import ChatPhoto from '../../imgs/chat3.png';
 import WordCloud from './TagCloud';
 import Spinner from '../Utilities/Spinner';
 import ParsedParagraphs from './AboutParsedParagraphs';
-import {ChatBtns, OriginBtn} from './AboutBtns';
-import {trimmer, parseCloud } from '../../utilities/parsers';
+import { ChatBtns, OriginBtn } from './AboutBtns';
+import { trimmer, parseCloud } from '../../utilities/parsers';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import aboutString from '../../data/htmlString';
@@ -18,11 +18,11 @@ const AboutMe = () => {
 	const [loading, setLoading] = useState(false);
 	const [text, setText] = useState('');
 	const [cloudText, setCloudText] = useState('');
-	const [displayMode, setDisplayMode] = useState("Draft");
+	const [displayMode, setDisplayMode] = useState('Draft');
 	const [cloud, setCloud] = useState(false);
 	const [theme, setTheme] = useState(false);
-	const { width } = useViewport(); 
-	console.log("width:", width);
+	const { width } = useViewport();
+	console.log('width:', width);
 
 	useEffect(() => {
 		window.scrollTo({
@@ -31,7 +31,6 @@ const AboutMe = () => {
 			behavior: 'smooth',
 		});
 	}, [text, cloudText]);
-
 
 	const toastOptions = {
 		position: 'top-right',
@@ -47,7 +46,7 @@ const AboutMe = () => {
 	const handleOriginal = () => {
 		setText('');
 		setCloudText('');
-		setDisplayMode("Draft");
+		setDisplayMode('Draft');
 		setCloud(false);
 		setTheme(false);
 	};
@@ -55,8 +54,8 @@ const AboutMe = () => {
 	const handleRewrite = async e => {
 		e.preventDefault();
 		const btnValue = e.target.value;
-		
-			try {
+
+		try {
 			setLoading(true);
 			toast.info('Awaiting Response!!', toastOptions);
 
@@ -75,15 +74,13 @@ const AboutMe = () => {
 			const data = await response.json();
 
 			setTimeout(() => {
-	
 				if (btnValue === 'Cloud') {
 					setCloud(true);
 					const trimmed = trimmer(data.newText, ' ', true);
 					const parsed = parseCloud(trimmed);
 					setCloudText(parsed);
-				
 				} else {
-					if(cloud) setCloud(false);
+					if (cloud) setCloud(false);
 					const trimmed = trimmer(data.newText, '\n', false);
 					setText(trimmed);
 				}
@@ -101,7 +98,6 @@ const AboutMe = () => {
 		}
 	};
 
-
 	const chatStyle = {
 		height: '25px',
 		position: 'relative',
@@ -114,49 +110,46 @@ const AboutMe = () => {
 	};
 
 	return (
-		<div className="aboutme">
-			<div className="aboutme__div">
-				{
-					displayMode !== "Draft" ? <div className="about__title">{displayMode}</div> : <AboutPhoto />
-				}
-				{
-					displayMode !== "Draft" && width >= 650 ?  <AboutPhoto /> : null
-				}
-				{
-					displayMode === "Draft" ? <Draft /> : null
-				}
-				{
-					displayMode === "Cloud" ? < WordCloud tags={cloudText} /> : null
-				}
-				{
-					displayMode === "Summary" || displayMode === "Themes" ? <ParsedParagraphs text={text} theme={theme} /> : null
-				}
-				{
-					displayMode !== "Draft" ? < OriginBtn cloud={cloud} handler={handleOriginal}/> : null
-				}
+			<div className="aboutme">
+				<div className="aboutme__wrapper">
+
 				
-			</div>
-			<div className="chat">
-				<div className="chat__div">
-					<div className="chat__spinner">
-						{loading && <Spinner />}
-					</div>
-					<div className="chat__text">
-						Use{' '}
-						<span>
-							<div style={divStyle}>
-								<img src={ChatPhoto} style={chatStyle} alt="chat g p t" />
-							</div>
-						</span>{' '}
-						ChatGPT to organise by word cloud, summary or theme.
-					</div>
-					<div className="chat__form">
-						<ChatBtns handler={handleRewrite} />
+				<div className="aboutme__div">
+					{displayMode !== 'Draft' ? (
+						<div className="about__title">{displayMode}</div>
+					) : (
+						<AboutPhoto />
+					)}
+					{displayMode !== 'Draft' && width >= 650 ? <AboutPhoto /> : null}
+					{displayMode === 'Draft' ? <Draft /> : null}
+					{displayMode === 'Cloud' ? <WordCloud tags={cloudText} /> : null}
+					{displayMode === 'Summary' || displayMode === 'Themes' ? (
+						<ParsedParagraphs text={text} theme={theme} />
+					) : null}
+					{displayMode !== 'Draft' ? (
+						<OriginBtn cloud={cloud} handler={handleOriginal} />
+					) : null}
+				</div>
+				<div className="chat">
+					<div className="chat__div">
+						<div className="chat__spinner">{loading && <Spinner />}</div>
+						<div className="chat__text">
+							Use{' '}
+							<span>
+								<div style={divStyle}>
+									<img src={ChatPhoto} style={chatStyle} alt="chat g p t" />
+								</div>
+							</span>{' '}
+							ChatGPT to organise by word cloud, summary or theme.
+						</div>
+						<div className="chat__form">
+							<ChatBtns handler={handleRewrite} />
+						</div>
 					</div>
 				</div>
+				<ToastContainer />
 			</div>
-			<ToastContainer />
-		</div>
+			</div>
 	);
 };
 

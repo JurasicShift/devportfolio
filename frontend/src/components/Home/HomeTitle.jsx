@@ -14,7 +14,7 @@ const HomeTitle = props => {
 	const [displayMonikerAndStars, setDisplayMonikerAndStars] = useState(false);
 	const titleCounter = useRef(0);
 	const subtitleCounter = useRef(0);
-	
+
 	const [name, setName] = useState(stateFactory(props.name));
 	const [role, setRole] = useState(stateFactory(props.role));
 
@@ -26,7 +26,7 @@ const HomeTitle = props => {
 			}, 1000);
 			return _ => clearTimeout(timer);
 		}
-		});
+	});
 
 	useEffect(() => {
 		if (initialize.current === false && !runSubtitleEffect) {
@@ -48,7 +48,7 @@ const HomeTitle = props => {
 	}, [runTitleEffect, name]);
 
 	useEffect(() => {
-		if(displayMonikerAndStars) return;
+		if (displayMonikerAndStars) return;
 
 		if (runSubtitleEffect && subtitleCounter.current === role.length) {
 			setDisplayMonikerAndStars(!displayMonikerAndStars);
@@ -60,27 +60,26 @@ const HomeTitle = props => {
 			}, 100);
 			return () => clearInterval(timer);
 		}
-
-		
 	}, [runSubtitleEffect, role, displayMonikerAndStars]);
-
 
 	return (
 		<div>
-			<HomeStars shootingStars={displayMonikerAndStars}/>
-		<div className="home__sections">
-			<section className="home__title">
+			<div className="home__stars">
+				<HomeStars shootingStars={displayMonikerAndStars} />
+			</div>
+			<div className="home__sections">
+				<section className="home__title">
 					<h1 className="home__name">
 						<TitleGenerator arr={name} />
 					</h1>
-				<div className="home__subheader">
-					<p className="home__text">
-						<TitleGenerator arr={role} />
-					</p>
-				</div>
-				<PageMoniker page="PORTFOLIO" display={displayMonikerAndStars} />
-			</section>
-		</div>
+					<div className="home__subheader">
+						<p className="home__text">
+							<TitleGenerator arr={role} />
+						</p>
+					</div>
+					<PageMoniker page="PORTFOLIO" display={displayMonikerAndStars} />
+				</section>
+			</div>
 		</div>
 	);
 };
