@@ -9,7 +9,7 @@ function Background(props) {
 	let [zoom, setZoom] = useState(false);
 
 	let background__animate = {
-		animation: 'bgSlide 1s 1s',
+		animation: 'bgSlide 1s 0.25s',
 	};
 	
 	const prefix = '/michaelwhytewebdev/';

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './AboutMe.css';
 import Draft from './AboutDraft';
 import AboutPhoto from './Photo';
@@ -12,6 +12,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import aboutString from '../../data/htmlString';
 import useViewport from '../../hooks/useViewport';
+
 // const baseUrl = 'http://localhost:5000';
 
 const AboutMe = () => {
@@ -22,14 +23,23 @@ const AboutMe = () => {
 	const [cloud, setCloud] = useState(false);
 	const [theme, setTheme] = useState(false);
 	const { width } = useViewport();
-	console.log('width:', width);
+	const aboutMeRef = useRef();
+	const scrollToRef = useRef();
+	const initialLoad = useRef(true);
 
 	useEffect(() => {
-		window.scrollTo({
-			top: 0,
-			left: 0,
-			behavior: 'smooth',
-		});
+
+		if(initialLoad.current) {
+			initialLoad.current = false;
+			return;
+		}
+		const scrollToElement = () => {
+			if (scrollToRef.current) {
+				scrollToRef.current.scrollIntoView({ behavior: 'smooth' } );
+			  }
+		  };
+
+		  scrollToElement();
 	}, [text, cloudText]);
 
 	const toastOptions = {
@@ -59,7 +69,7 @@ const AboutMe = () => {
 			setLoading(true);
 			toast.info('Awaiting Response!!', toastOptions);
 
-			const response = await fetch(`/rewrite`, {
+			const response = await fetch(`http://localhost:5000/rewrite`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -110,11 +120,9 @@ const AboutMe = () => {
 	};
 
 	return (
-			<div className="aboutme">
-				<div className="aboutme__wrapper">
-
-				
-				<div className="aboutme__div">
+		<div className="aboutme">
+			<div className="aboutme__wrapper" ref={scrollToRef}>
+				<div className="aboutme__div" ref={aboutMeRef}>
 					{displayMode !== 'Draft' ? (
 						<div className="about__title">{displayMode}</div>
 					) : (
@@ -149,7 +157,7 @@ const AboutMe = () => {
 				</div>
 				<ToastContainer />
 			</div>
-			</div>
+		</div>
 	);
 };
 

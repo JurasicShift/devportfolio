@@ -6,7 +6,7 @@
 .aboutme {
 	width: 100vw;
 	height: 100vh;
-	overflow-y: auto;
+	overflow-y: scroll;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -20,6 +20,7 @@
 .aboutme__wrapper {
 	position: relative;
 	top: 1500px;
+	/* margin-top: 1500px; */
 }
 
 .aboutme__div,
