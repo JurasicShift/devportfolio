@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './AboutMe.css';
 import Draft from './AboutDraft';
 import AboutPhoto from './Photo';
@@ -23,23 +23,14 @@ const AboutMe = () => {
 	const [cloud, setCloud] = useState(false);
 	const [theme, setTheme] = useState(false);
 	const { width } = useViewport();
-	const aboutMeRef = useRef();
-	const scrollToRef = useRef();
-	const initialLoad = useRef(true);
+
 
 	useEffect(() => {
-
-		if(initialLoad.current) {
-			initialLoad.current = false;
-			return;
-		}
-		const scrollToElement = () => {
-			if (scrollToRef.current) {
-				scrollToRef.current.scrollIntoView({ behavior: 'smooth' } );
-			  }
-		  };
-
-		  scrollToElement();
+		window.scrollTo({
+					top: 0,
+					behavior: 'smooth',
+				});
+		
 	}, [text, cloudText]);
 
 	const toastOptions = {
@@ -120,9 +111,8 @@ const AboutMe = () => {
 	};
 
 	return (
-		<div className="aboutme">
-			<div className="aboutme__wrapper" ref={scrollToRef}>
-				<div className="aboutme__div" ref={aboutMeRef}>
+		<div className="aboutme" style={{top: `100px`}}>
+				<div className="aboutme__div">
 					{displayMode !== 'Draft' ? (
 						<div className="about__title">{displayMode}</div>
 					) : (
@@ -157,8 +147,9 @@ const AboutMe = () => {
 				</div>
 				<ToastContainer />
 			</div>
-		</div>
 	);
 };
+
+
 
 export default AboutMe;

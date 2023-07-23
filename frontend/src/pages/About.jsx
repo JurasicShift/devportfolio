@@ -8,7 +8,9 @@ import { titleTab } from '../utilities/titleFn';
 
 const About = () => {
 	const [loading] = useReadyState();
+	
 	titleTab('About');
+
 	return (
 		<>
 			{loading ? (
@@ -18,9 +20,8 @@ const About = () => {
 					<div className="about__page">
 						<PageTitle text="About me..." />
 					</div>
-					<div className="about__div">
+					<div className='about__div'>
 						<AboutMe />
-						
 					</div>
 				</>
 			)}

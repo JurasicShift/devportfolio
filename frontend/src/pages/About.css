@@ -4,7 +4,6 @@
 }
 
 .about__div {
-    position: fixed;
-    height: 100vh;
-
+    position: absolute;
+   top: 0;
 }
