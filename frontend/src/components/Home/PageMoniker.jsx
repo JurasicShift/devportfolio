@@ -15,7 +15,7 @@ function PageMoniker(props) {
     return (
         <section className="page__moniker">
         <div className="page__title" style={props.display ? {opacity: "1"} : null}>
-           <Link to="/about" style={linkStyle} > {props.page} </Link>
+           <Link to="/projects" style={linkStyle} > {props.page} </Link>
         </div>
     </section>
     )

@@ -7,11 +7,9 @@ import Icons from '../Utilities/Icons';
 const activeStyle = {
 	opacity: "1"
 };
+
 const styleNavOpen = {
 	left: '0px',
-};
-const styleNavClosed = {
-	left: '-60px',
 };
 
 const flexNavOpen = {
@@ -42,7 +40,7 @@ function Navigation() {
 	const [togElement, setTogElement] = useState(burgerClosed);
 	const [togOpacity, setTogOpacity] = useState('0');
 	const { width } = useViewport();
-	const breakpoint1 = 992;
+	const breakpoint = 992;
 
 	const handleToggleClick = () => {
 		const navState = openNav;
@@ -78,13 +76,14 @@ function Navigation() {
 			}, 500);
             return () => clearTimeout(timer);
     }
+	//style={width > breakpoint1 ? openNav === true ? styleNavOpen : styleNavClosed : flexNavOpen }
 
 	return (
-		<div className="navLayout" style={width <= breakpoint1 ? openNav === true ? navHeight100 : navHeight0 : navHeight300} >
+		<nav className="navLayout" style={width <= breakpoint ? openNav === true ? navHeight100 : navHeight0 : navHeight300} >
 			<div
-				className={width <= breakpoint1 ? openNav === true ? "navSmall navSmallHeight": "navSmall" : "navigation"}
+				className={width <= breakpoint ? openNav === true ? "navSmall navSmallHeight": "navSmall" : "navigation"}
 				id="navigation"
-				style={width > breakpoint1 ? openNav === true ? styleNavOpen : styleNavClosed : flexNavOpen }
+				style={width > breakpoint ?  styleNavOpen  : flexNavOpen }
 			>
 				<ul>
 					<li>
@@ -92,7 +91,7 @@ function Navigation() {
 							className="link"
 							to="/"
 							style={({ isActive }) => (isActive ? activeStyle : undefined)}
-							onClick={width <= breakpoint1 ? handleToggleClick : null}
+							onClick={width <= breakpoint ? handleToggleClick : null}
 						>
 							<span className="icon">
 								<i className="fas fa-home"></i>
@@ -105,7 +104,7 @@ function Navigation() {
 							className="link"
 							to="/about"
 							style={({ isActive }) => (isActive ? activeStyle : undefined)}
-							onClick={width <= breakpoint1 ? handleToggleClick : null}
+							onClick={width <= breakpoint ? handleToggleClick : null}
 						>
 							<span className="icon">
 								<i className="fas fa-user-circle"></i>
@@ -118,7 +117,7 @@ function Navigation() {
 							className="link"
 							to="/projects"
 							style={({ isActive }) => (isActive ? activeStyle : undefined)}
-							onClick={width <= breakpoint1 ? handleToggleClick : null}
+							onClick={width <= breakpoint ? handleToggleClick : null}
 						>
 							<span className="icon">
 								<i className="fas fa-drafting-compass"></i>
@@ -131,7 +130,7 @@ function Navigation() {
 							className="link"
 							to="/tech"
 							style={({ isActive }) => (isActive ? activeStyle : undefined)}
-							onClick={width <= breakpoint1 ? handleToggleClick : null}
+							onClick={width <= breakpoint ? handleToggleClick : null}
 						>
 							<span className="icon">
 								<i className="fas fa-code-branch"></i>
@@ -144,7 +143,7 @@ function Navigation() {
 							className="link"
 							to="/contact"
 							style={({ isActive }) => (isActive ? activeStyle : undefined)}
-							onClick={width <= breakpoint1 ? handleToggleClick : null}
+							onClick={width <= breakpoint ? handleToggleClick : null}
 						>
 							<span className="icon" >
 								<i className="far fa-comments"></i>
@@ -157,7 +156,7 @@ function Navigation() {
 					<Icons relative={true}/>
 				</div>
 			</div>
-			<div className="toggle" id="toggle" onClick={handleToggleClick}>
+			{width < breakpoint && <div className="toggle" id="toggle" onClick={handleToggleClick}>
 				<div
 					className="iconTog"
 					id="iconTog"
@@ -165,9 +164,9 @@ function Navigation() {
 				>
 					<i className={togElement}></i>
 				</div>
-			</div> 
+			</div> }
 			<Outlet />
-		</div>
+		</nav>
 	);
 }
 

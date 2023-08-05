@@ -30,7 +30,7 @@ NAVBAR
 	background-color: rgba(39, 38, 36, 0.9);
 }
 
-/* 34, 85, 153, */
+
 .navSmallHeight {
 	height: 100%;
 }
@@ -136,6 +136,9 @@ NAVBAR
 
 .toggle {
 	position: fixed;
+	background-color: transparent;
+	color:#fff;
+	border: none;
 	top: 5px;
 	right: 5px;
 	width: 50px;
