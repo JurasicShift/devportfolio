@@ -41,7 +41,7 @@ const Draft = () => {
 	return (
 		<>
 			<p className="aboutme__text has-dropcap">
-				Hello and welcome to my portfolio. I am a self-taught M.E.R.N. stack developer based in Lancaster, England. I work as a library assistant and I'm currently seeking employment opportunities in web development.{' '}
+				Hello and welcome to my portfolio. I am a self-taught M.E.R.N. stack developer based in Lancaster, England. I work as a library assistant and I&apos;m currently seeking employment opportunities in web development.{' '}
 			</p>
 			<p className="aboutme__text">
 				{' '}
@@ -113,7 +113,7 @@ const Draft = () => {
 				for kids aged 7 – 11.
 			</p>
 			<p className="aboutme__text aboutme__text--mod">
-			Beyond web development my interests are split between outdoor activities and more academic pursuits. I have completed 5 marathons and 6 half marathons up and down the UK. I enjoy travel and have gained my advanced open water diving certificate in Indonesia. I recently walked the Cumbria Way and I'm currently training to swim the length of Coniston Water (5.25 miles). I enjoy learning French and reading French literature. My other reading interests include history, politics, philosophy, critical theory, psychoanalysis, science fiction and classics
+			Beyond web development my interests are split between outdoor activities and more academic pursuits. I have completed 5 marathons and 6 half marathons up and down the UK. I enjoy travel and have gained my advanced open water diving certificate in Indonesia. I recently walked the Cumbria Way and I&apos;m currently training to swim the length of Coniston Water (5.25 miles). I enjoy learning French and reading French literature. My other reading interests include history, politics, philosophy, critical theory, psychoanalysis, science fiction and classics
 			</p>
 		</>
 	);
