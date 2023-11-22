@@ -29,7 +29,7 @@ const allProjects = [
         img: fallenSs, 
         type: "Full Stack",
         title: "Fallen Heroes of Metal",
-        url: "http://www.fallenheroesofmetal.org.uk/",
+        url: "http://www.fallenheroesofmetals.org.uk/",
         gitUrl: "https://github.com/JurasicShift/fallenheroesofmetal",
     }
 ]

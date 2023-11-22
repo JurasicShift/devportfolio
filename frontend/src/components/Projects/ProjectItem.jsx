@@ -8,7 +8,6 @@ import  useViewport  from '../../hooks/useViewport';
 import './ProjectItem.css';
 import Icons from '../Utilities/Icons';
 
-//add onFocus and onBlur for mobile devices!!!
 
 function ProjectItem(props) {
 
