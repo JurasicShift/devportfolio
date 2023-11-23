@@ -42,6 +42,7 @@ const ContactForm = () => {
 			})
 				.then(result => {
 					if(!result.ok) {
+						console.log("RESULT:", result);
 						return toast.warn("Sorry Something Went Wrong!", toastOptions);
 					}
 					return result.json()
